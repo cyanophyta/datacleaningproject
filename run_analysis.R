@@ -72,3 +72,6 @@ fulldf <- fulldf %>%
 #create new data frame summarydf that will contain average of each
 #column in fulldf, grouped by subject and activity
 summarydf <- aggregate(. ~ subject + activity, fulldf, mean)
+
+write.table(fulldf, "DataForAnalysis.txt", row.name = FALSE)
+write.table(summarydf, "SummaryGroupedData.txt", row.name = FALSE)
